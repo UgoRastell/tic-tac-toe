@@ -13,19 +13,18 @@ cells.forEach(element => {
         if (caseIndex[index] !==0) {
             console.log("Cette case est occupée")
         }else{
-            if (player !== selectPlayer) {
+            if (player == selectPlayer) {
                 element.innerHTML = '<img src="./img/rond.png" width="50" height="50">';
-                
+                caseIndex[index] = 1;
                 player = 0;
             }
-                modeEasy(index,element)
-                console.log(caseIndex)
-
+            modeEasy()
             if (index !== -1) {
                 element.classList.add("lock");
-                caseIndex[index] = 1;
             }
             win()
+            
+            
         }
     });
 });
@@ -69,19 +68,21 @@ function win() {
     }
 }
 
-function modeEasy(index,element) {
-    
+function modeEasy() {
 
-    if (caseIndex[index] == 0) {
+    const iaDebile = Math.floor(Math.random() * 9);
+    
+    if(caseIndex[iaDebile] == 0){
+        caseIndex[iaDebile] = 2;
+        console.log(caseIndex)
+    }else{
         const iaDebile = Math.floor(Math.random() * 9);
-        console.log(caseIndex[iaDebile])
-        caseIndex[iaDebile] = 2
-        element.innerHTML = '<img src="./img/rond.png" width="50" height="50">';
-        player = selectPlayer;
+        caseIndex[iaDebile] = 2;
+        console.log(caseIndex)
     }
 
-    
-    
+    player = selectPlayer;
 }
+    
 
 
