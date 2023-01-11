@@ -21,18 +21,16 @@ cells.forEach(element => {
                 win()
                 player = 1;
             }
-<<<<<<< HEAD
+
             if (index !== -1) {
                 element.classList.add("lock");
             }
-=======
+
             modeEasy()
             if (index !== -1) {
                 element.classList.add("lock");
             }
             win()
-            
->>>>>>> 1cfb3bb2fcd62f680ade568e2105eaefa0221d75
             
         }
     });
