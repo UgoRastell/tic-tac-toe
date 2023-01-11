@@ -79,6 +79,42 @@ function win() {
 
 function modeEasy() {
 
+    // Si ce n'est pas au tour du joueur 2, on ne fait rien
+    if (player !== 0) return;
+
+    // On convertit la NodeList en tableau
+    const cellsArray = Array.from(cells);
+
+    // On récupère la liste des cases encore disponibles
+    const availableCells = cellsArray.filter((cell, index) => caseIndex[index] === 0);
+
+    // Si il n'y a plus de cases disponibles, on ne fait rien
+    if (availableCells.length === 0) return;
+
+    // On choisit une case disponible au hasard
+    const randomIndex = Math.floor(Math.random() * availableCells.length);
+    const randomCell = availableCells[randomIndex];
+
+    // On joue sur cette case
+    randomCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
+    const index = randomCell.getAttribute("data-cell-index");
+    caseIndex[index] = 2;
+    console.log(caseIndex)
+
+
+    const iaDebile = Math.floor(Math.random() * 9);
+    
+    if(caseIndex[iaDebile] == 0){
+        caseIndex[iaDebile] = 2;
+        console.log(caseIndex)
+    }else{
+        const iaDebile = Math.floor(Math.random() * 9);
+        caseIndex[iaDebile] = 2;
+        console.log(caseIndex)
+    }
+
+    player = selectPlayer;
+
 }
     
 
