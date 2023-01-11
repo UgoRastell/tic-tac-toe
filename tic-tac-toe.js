@@ -13,19 +13,18 @@ cells.forEach(element => {
         if (caseIndex[index] !==0) {
             console.log("Cette case est occupée")
         }else{
-            if (player !== selectPlayer) {
+            if (player == selectPlayer) {
                 element.innerHTML = '<img src="./img/rond.png" width="50" height="50">';
-                
+                caseIndex[index] = 1;
                 player = 0;
+                modeEasy()
+                win()
+                player = 1;
             }
-                modeEasy(index,element)
-                console.log(caseIndex)
-
             if (index !== -1) {
                 element.classList.add("lock");
-                caseIndex[index] = 1;
             }
-            win()
+            
         }
     });
 });
@@ -52,7 +51,7 @@ function win() {
             caseIndex[element] = 1;
         }
         
-        if (player == selectPlayer) {
+        if (player !== selectPlayer) {
             var text = document.createTextNode("Le player 1 à gagné");
         }else{
             var text = document.createTextNode("Le player 2 à gagné");
@@ -69,19 +68,30 @@ function win() {
     }
 }
 
-function modeEasy(index,element) {
-    
+function modeEasy() {
+    // Si ce n'est pas au tour du joueur 2, on ne fait rien
+    if (player !== 0) return;
 
-    if (caseIndex[index] == 0) {
-        const iaDebile = Math.floor(Math.random() * 9);
-        console.log(caseIndex[iaDebile])
-        caseIndex[iaDebile] = 2
-        element.innerHTML = '<img src="./img/rond.png" width="50" height="50">';
-        player = selectPlayer;
-    }
+    // On convertit la NodeList en tableau
+    const cellsArray = Array.from(cells);
 
-    
-    
+    // On récupère la liste des cases encore disponibles
+    const availableCells = cellsArray.filter((cell, index) => caseIndex[index] === 0);
+
+    // Si il n'y a plus de cases disponibles, on ne fait rien
+    if (availableCells.length === 0) return;
+
+    // On choisit une case disponible au hasard
+    const randomIndex = Math.floor(Math.random() * availableCells.length);
+    const randomCell = availableCells[randomIndex];
+
+    // On joue sur cette case
+    randomCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
+    const index = randomCell.getAttribute("data-cell-index");
+    caseIndex[index] = 2;
+    console.log(caseIndex)
 }
+
+
 
 
