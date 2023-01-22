@@ -37,7 +37,9 @@ function selectTaille(taille) {
 
 }
 
-
 function selectJouer() {
     document.location.href = "http://127.0.0.1:5500/tic-tac-toe.html";
 }
+
+
+selectLigne(taille)

@@ -86,7 +86,13 @@ cells.forEach(element => {
             if (player == 1) {
                 element.innerHTML = '<img src="./img/rond.png" width="50" height="50">';
                 caseIndex[index] = 1;
-                win()
+                if (localStorage.getItem('Taille') == 1) {
+                    win4x4()
+                }else if (localStorage.getItem('Taille') == 2) {
+                    win5x5()
+                }else{
+                    win3x3()
+                }
                 player = 2;
             }
 
@@ -121,42 +127,6 @@ function resetGame() {
 }
 
 
-function win() {
-    var status = document.getElementById("game-status");
-    var text = document.createTextNode("Le joueur");
-
-    if( (caseIndex[0] == caseIndex[1] && caseIndex[1] == caseIndex[2] && caseIndex[0] !== 0) || 
-        (caseIndex[3] == caseIndex[4] && caseIndex[4] == caseIndex[5] && caseIndex[3] !== 0) ||
-        (caseIndex[6] == caseIndex[7] && caseIndex[7] == caseIndex[8] && caseIndex[6] !== 0) ||
-        (caseIndex[0] == caseIndex[4] && caseIndex[4] == caseIndex[8] && caseIndex[0] !== 0) ||
-        (caseIndex[2] == caseIndex[4] && caseIndex[4] == caseIndex[6] && caseIndex[2] !== 0) ||
-        (caseIndex[0] == caseIndex[3] && caseIndex[3] == caseIndex[6] && caseIndex[0] !== 0) ||
-        (caseIndex[1] == caseIndex[4] && caseIndex[4] == caseIndex[7] && caseIndex[1] !== 0) ||
-        (caseIndex[2] == caseIndex[5] && caseIndex[5] == caseIndex[8] && caseIndex[2] !== 0)) {
-
-        for (element in caseIndex) {
-            caseIndex[element] = 1;
-        }
-        
-        if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
-        }else{
-            var text = document.createTextNode("L'ia à gagné");
-        }
-    
-        status.appendChild(text);
-    }else{
-        if (caseIndex.includes(0) ) {
-        
-        }else{
-            var text = document.createTextNode("Égalité");
-            status.appendChild(text);
-        }
-    }
-
-    
-}
-
 function modeEasy() {
     // On convertit la NodeList en tableau
     const cellsArray = Array.from(cells);
@@ -176,7 +146,13 @@ function modeEasy() {
     const index = randomCell.getAttribute("data-cell-index");
     caseIndex[index] = 2;
     console.log(caseIndex)
-    win()
+    if (localStorage.getItem('Taille') == 1) {
+        win4x4()
+    }else if (localStorage.getItem('Taille') == 2) {
+        win5x5()
+    }else{
+        win3x3()
+    }
     player = 1;
     
 }
