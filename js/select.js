@@ -1,6 +1,7 @@
 let difficulty = 0
 let taille = 0
 let tour = 0
+let ligne = 0
 
 function selectTour(tour) {
 
@@ -42,4 +43,6 @@ function selectJouer() {
 }
 
 
-selectLigne(taille)
+function selectLigne(ligne){
+
+}

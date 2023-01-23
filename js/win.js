@@ -1,7 +1,5 @@
 function win3x3(){
     var status = document.getElementById("game-status");
-    var text = document.createTextNode("Le joueur");
-
     // Vérifier les lignes
     for(let i = 0; i <= 6; i += 3) {
       if(caseIndex[i] === caseIndex[i + 1] && caseIndex[i + 1] === caseIndex[i + 2] && caseIndex[i] !== 0) {
@@ -75,7 +73,7 @@ function win3x3(){
             status.appendChild(text);
             return
         }
-      }
+        }
 
     egalite()
 }
@@ -89,21 +87,41 @@ function win4x4(){
     for(let i = 0; i <= 20; i += 5) {
         if(caseIndex[i] === caseIndex[i + 1] && caseIndex[i + 1] === caseIndex[i + 2] && caseIndex[i + 2] === caseIndex[i + 3] && caseIndex[i + 3] === caseIndex[i + 4] && caseIndex[i] !== 0) {
 
-        for (element in caseIndex) {
-            caseIndex[element] = 1;
-        }
+            for (element in caseIndex) {
+                caseIndex[element] = 1;
+            }
 
-        if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
-            status.appendChild(text);
-            return
-        }else{
-            var text = document.createTextNode("L'ia à gagné");
-            status.appendChild(text);
-            return
-        }
+            if (player !== 2) {
+                var text = document.createTextNode("Le player 1 à gagné");
+                status.appendChild(text);
+                return
+            }else{
+                var text = document.createTextNode("L'ia à gagné");
+                status.appendChild(text);
+                return
+            }
         }
     }
+
+    for(let i = 0; i <= 6; i += 3) {
+        if(caseIndex[i] === caseIndex[i + 1] && caseIndex[i + 1] === caseIndex[i + 2] && caseIndex[i] !== 0) {
+  
+          for (element in caseIndex) {
+              caseIndex[element] = 1;
+          }
+  
+          if (player !== 2) {
+              var text = document.createTextNode("Le player 1 à gagné");
+              status.appendChild(text);
+              return
+          }else{
+              var text = document.createTextNode("L'ia à gagné");
+              status.appendChild(text);
+              return
+          }
+        } 
+      
+      }
 
     // Vérifier les colonnes
     for(let i = 0; i <= 4; i++) {
@@ -125,7 +143,7 @@ function win4x4(){
         }
     }
 
-// Vérifier les diagonales
+    // Vérifier les diagonales
     if(caseIndex[0] === caseIndex[6] && caseIndex[6] === caseIndex[12] && caseIndex[12] === caseIndex[18] && caseIndex[18] === caseIndex[24] && caseIndex[0] !== 0) {
         
         for (element in caseIndex) {
@@ -165,7 +183,6 @@ function win4x4(){
 
 function egalite() {
     var status = document.getElementById("game-status");
-    var text = document.createTextNode("Le joueur");
     if (caseIndex.includes(0) ) {
         
     }else{
