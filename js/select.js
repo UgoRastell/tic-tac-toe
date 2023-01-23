@@ -46,3 +46,7 @@ function selectJouer() {
 function selectLigne(ligne){
 
 }
+
+function selectParametre(){
+    window.location.href = 'http://127.0.0.1:5500/';
+}

@@ -9,11 +9,15 @@ function win3x3(){
         }
 
         if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
+            var text = document.createTextNode("Tu as gagnés !");
+            var audio = new Audio('../assets/audio/win.mp3');
+            audio.play();
             status.appendChild(text);
             return
         }else{
-            var text = document.createTextNode("L'ia à gagné");
+            var text = document.createTextNode("Tu as perdu ! :(");
+            var audio = new Audio('../assets/audio/lose.mp3');
+            audio.play();
             status.appendChild(text);
             return
         }
@@ -30,11 +34,15 @@ function win3x3(){
         }
 
         if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
+            var text = document.createTextNode("Tu as gagnés !");
+            var audio = new Audio('../assets/audio/win.mp3');
+            audio.play();
             status.appendChild(text);
             return
         }else{
-            var text = document.createTextNode("L'ia à gagné");
+            var text = document.createTextNode("Tu as perdu ! :(");
+            var audio = new Audio('../assets/audio/lose.mp3');
+            audio.play();
             status.appendChild(text);
             return
         }
@@ -49,11 +57,15 @@ function win3x3(){
     }
 
     if (player !== 2) {
-        var text = document.createTextNode("Le player 1 à gagné");
+        var text = document.createTextNode("Tu as gagnés !");
+        var audio = new Audio('../assets/audio/win.mp3');
+        audio.play();
         status.appendChild(text);
         return
     }else{
-        var text = document.createTextNode("L'ia à gagné");
+        var text = document.createTextNode("Tu as perdu ! :(");
+        var audio = new Audio('../assets/audio/lose.mp3');
+        audio.play();
         status.appendChild(text);
         return
     }
@@ -65,11 +77,15 @@ function win3x3(){
         }
 
         if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
+            var text = document.createTextNode("Tu as gagné !");
+            var audio = new Audio('../assets/audio/win.mp3');
+            audio.play();
             status.appendChild(text);
             return
         }else{
-            var text = document.createTextNode("L'ia à gagné");
+            var text = document.createTextNode("Tu as perdu ! :(");
+            var audio = new Audio('../assets/audio/lose.mp3');
+            audio.play();
             status.appendChild(text);
             return
         }
@@ -92,11 +108,11 @@ function win4x4(){
             }
 
             if (player !== 2) {
-                var text = document.createTextNode("Le player 1 à gagné");
+                var text = document.createTextNode("Tu as gagnés !");
                 status.appendChild(text);
                 return
             }else{
-                var text = document.createTextNode("L'ia à gagné");
+                var text = document.createTextNode("Tu as perdu ! :(");
                 status.appendChild(text);
                 return
             }
@@ -111,11 +127,11 @@ function win4x4(){
           }
   
           if (player !== 2) {
-              var text = document.createTextNode("Le player 1 à gagné");
+              var text = document.createTextNode("Tu as gagnés !");
               status.appendChild(text);
               return
           }else{
-              var text = document.createTextNode("L'ia à gagné");
+              var text = document.createTextNode("Tu as perdu ! :(");
               status.appendChild(text);
               return
           }
@@ -132,11 +148,11 @@ function win4x4(){
         }
 
         if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
+            var text = document.createTextNode("Tu as gagnés !");
             status.appendChild(text);
             return
         }else{
-            var text = document.createTextNode("L'ia à gagné");
+            var text = document.createTextNode("Tu as perdu ! :(");
             status.appendChild(text);
             return
         }
@@ -151,11 +167,11 @@ function win4x4(){
         }
 
         if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
+            var text = document.createTextNode("Tu as gagnés !");
             status.appendChild(text);
             return
         }else{
-            var text = document.createTextNode("L'ia à gagné");
+            var text = document.createTextNode("Tu as perdu ! :(");
             status.appendChild(text);
             return
         }
@@ -168,11 +184,11 @@ function win4x4(){
         }
 
         if (player !== 2) {
-            var text = document.createTextNode("Le player 1 à gagné");
+            var text = document.createTextNode("Tu as gagnés !");
             status.appendChild(text);
             return
         }else{
-            var text = document.createTextNode("L'ia à gagné");
+            var text = document.createTextNode("Tu as perdu ! :(");
             status.appendChild(text);
             return
         }
