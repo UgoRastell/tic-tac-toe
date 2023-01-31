@@ -44,7 +44,14 @@ function selectJouer() {
 
 
 function selectLigne(ligne){
+    if (ligne == 1) {
+        localStorage.setItem('Ligne', ligne);
+        console.log("test")
+    }
 
+    if (ligne == 2) {
+        localStorage.setItem('Ligne', ligne);
+    }
 }
 
 function selectParametre(){

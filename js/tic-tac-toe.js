@@ -85,12 +85,10 @@ cells.forEach(element => {
             if (player == 1) {
                 element.innerHTML = '<img src="./img/rond.png" width="50" height="50">';
                 caseIndex[index] = 1;
-                if (localStorage.getItem('Taille') == 1) {
-                    win4x4()
-                }else if (localStorage.getItem('Taille') == 2) {
-                    win5x5()
-                }else{
+                if (localStorage.getItem('Ligne') == 1) {
                     win3x3()
+                }else if (localStorage.getItem('Ligne') == 2) {
+                    win2()
                 }
                 player = 2;
             }
@@ -141,12 +139,10 @@ function modeEasy() {
     let index = randomCell.getAttribute("data-cell-index");
     caseIndex[index] = 2;
     console.log(caseIndex)
-    if (localStorage.getItem('Taille') == 1) {
-        win4x4()
-    }else if (localStorage.getItem('Taille') == 2) {
-        win5x5()
-    }else{
+    if (localStorage.getItem('Ligne') == 1) {
         win3x3()
+    }else if (localStorage.getItem('Ligne') == 2) {
+        win2()
     }
     player = 1;
     
@@ -171,12 +167,10 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
         player = 1;
     }else if(caseIndex[1] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[7] !== 1 || caseIndex[7] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[1] !== 1 || caseIndex[1] == caseIndex[7] && caseIndex[7] == 2 && caseIndex[4] !== 1){
@@ -193,12 +187,10 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
         player = 1;
     }else if(caseIndex[2] == caseIndex[5] && caseIndex[5] == 2 && caseIndex[8] !== 1 || caseIndex[8] == caseIndex[5] && caseIndex[5] == 2 && caseIndex[2] !== 1 || caseIndex[2] == caseIndex[8] && caseIndex[8] == 2 && caseIndex[5] !== 1){
@@ -215,13 +207,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[0] == caseIndex[1] && caseIndex[1] == 2 && caseIndex[2] !== 1 || caseIndex[2] == caseIndex[1] && caseIndex[1] == 2 && caseIndex[0] !== 1 || caseIndex[0] == caseIndex[2] && caseIndex[2] == 2 && caseIndex[1] !== 1){
         
@@ -237,13 +228,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[3] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[5] !== 1 || caseIndex[5] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[3] !== 1 || caseIndex[3] == caseIndex[5] && caseIndex[5] == 2 && caseIndex[4] !== 1){
         
@@ -259,13 +249,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[6] == caseIndex[7] && caseIndex[7] == 2 && caseIndex[8] !== 1 || caseIndex[8] == caseIndex[7] && caseIndex[7] == 2 && caseIndex[6] !== 1 || caseIndex[6] == caseIndex[8] && caseIndex[8] == 2 && caseIndex[7] !== 1){
         
@@ -281,13 +270,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[0] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[8] !== 1 || caseIndex[8] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[0] !== 1 || caseIndex[0] == caseIndex[8] && caseIndex[8] == 2 && caseIndex[4] !== 1){
         
@@ -303,13 +291,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[2] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[6] !== 1 || caseIndex[6] == caseIndex[4] && caseIndex[4] == 2 && caseIndex[2] !== 1 || caseIndex[2] == caseIndex[6] && caseIndex[6] == 2 && caseIndex[4] !== 1){
         
@@ -325,13 +312,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[0] == caseIndex[3] && caseIndex[3] == 1 && caseIndex[6] !== 2 || caseIndex[6] == caseIndex[3] && caseIndex[3] == 1 && caseIndex[0] !== 2 || caseIndex[0] == caseIndex[6] && caseIndex[6] == 1 && caseIndex[3] !== 2) {
         // debut defense
@@ -347,13 +333,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[1] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[7] !== 2 || caseIndex[7] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[1] !== 2 || caseIndex[1] == caseIndex[7] && caseIndex[7] == 1 && caseIndex[4] !== 2){
  
@@ -369,13 +354,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[2] == caseIndex[5] && caseIndex[5] == 1 && caseIndex[8] !== 2 || caseIndex[8] == caseIndex[5] && caseIndex[5] == 1 && caseIndex[2] !== 2 || caseIndex[2] == caseIndex[8] && caseIndex[8] == 1 && caseIndex[5] !== 2){
        
@@ -391,12 +375,10 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
         player = 1;
     }else if(caseIndex[0] == caseIndex[1] && caseIndex[1] == 1 && caseIndex[2] !== 2 || caseIndex[2] == caseIndex[1] && caseIndex[1] == 1 && caseIndex[0] !== 2 || caseIndex[0] == caseIndex[2] && caseIndex[2] == 1 && caseIndex[1] !== 2){
@@ -413,13 +395,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[3] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[5] !== 2 || caseIndex[5] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[3] !== 2 || caseIndex[3] == caseIndex[5] && caseIndex[5] == 1 && caseIndex[4] !== 2){
         
@@ -435,13 +416,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[6] == caseIndex[7] && caseIndex[7] == 1 && caseIndex[8] !== 2 || caseIndex[8] == caseIndex[7] && caseIndex[7] == 1 && caseIndex[6] !== 2 || caseIndex[6] == caseIndex[8] && caseIndex[8] == 1 && caseIndex[7] !== 2){
         
@@ -457,13 +437,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[0] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[8] !== 2 || caseIndex[8] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[0] !== 2 || caseIndex[0] == caseIndex[8] && caseIndex[8] == 1 && caseIndex[4] !== 2){
         
@@ -479,13 +458,12 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else if(caseIndex[2] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[6] !== 2 || caseIndex[6] == caseIndex[4] && caseIndex[4] == 1 && caseIndex[2] !== 2 || caseIndex[2] == caseIndex[6] && caseIndex[6] == 1 && caseIndex[4] !== 2){
         
@@ -501,24 +479,16 @@ function modeImpossible() {
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
         console.log(caseIndex)
-        if (localStorage.getItem('Taille') == 1) {
-            win4x4()
-        }else if (localStorage.getItem('Taille') == 2) {
-            win5x5()
-        }else{
+        if (localStorage.getItem('Ligne') == 1) {
             win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
         }
+
         player = 1;
     }else{
         modeEasy()
-    }
-
-    
-
-   
-   
-
-    
+    } 
 }
 
 
