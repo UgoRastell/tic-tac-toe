@@ -70,8 +70,12 @@ if (localStorage.getItem('Taille') == 1) {
     var cells = document.querySelectorAll(".cell");
 }
 
-if (localStorage.getItem('Tour') == 2) {
+if (localStorage.getItem('Tour') == 2 && localStorage.getItem('Difficulty') == 1) {
     modeEasy()
+}
+
+if (localStorage.getItem('Tour') == 2 && localStorage.getItem('Difficulty') == 2) {
+    middleIa();
 }
 
 cells.forEach(element => {
@@ -149,8 +153,6 @@ function modeEasy() {
 
 function modeImpossible() {
     let cellsArray = Array.from(cells);
-    
-
 
 
     if (caseIndex[0] == 1 && caseIndex[4] == 0 || caseIndex[2] == 1 && caseIndex[4] == 0 || caseIndex[6] == 1 && caseIndex[4] == 0 || caseIndex[8] == 1 && caseIndex[4] == 0 ) {
@@ -490,6 +492,24 @@ function modeImpossible() {
     }else{
         modeEasy()
     } 
+}
+
+function middleIa() {
+    let cellsArray = Array.from(cells);
+
+    var selectedCell = cellsArray[4];
+        
+        
+    selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
+    let index = selectedCell.getAttribute("data-cell-index");
+    caseIndex[index] = 2;
+    if (localStorage.getItem('Ligne') == 1) {
+        win3x3()
+    }else if (localStorage.getItem('Ligne') == 2) {
+        win2()
+    }
+    player = 1;
+
 }
 
 
