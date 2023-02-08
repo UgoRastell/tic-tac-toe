@@ -39,7 +39,7 @@ function selectTaille(taille) {
 }
 
 function selectJouer() {
-    document.location.href = "http://127.0.0.1:5500/tic-tac-toe.html";
+    document.location.href = "http://vps-e80a5a0d.vps.ovh.net/tic-tac-toe/tic-tac-toe.html";
 }
 
 
@@ -55,5 +55,5 @@ function selectLigne(ligne){
 }
 
 function selectParametre(){
-    window.location.href = 'http://127.0.0.1:5500/';
+    window.location.href = 'http://vps-e80a5a0d.vps.ovh.net/tic-tac-toe/';
 }
