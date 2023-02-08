@@ -79,7 +79,6 @@ cells.forEach(element => {
         
         let index = element.getAttribute("data-cell-index");
         if (caseIndex[index] !==0) {
-            console.log("Cette case est occupée")
             
         }else{
             if (player == 1) {
@@ -95,6 +94,7 @@ cells.forEach(element => {
 
             if (player == 2 && localStorage.getItem('Difficulty') == 2) {
                 modeImpossible()
+                console.log("diff")
                 player = 1;
             }
 
@@ -138,22 +138,38 @@ function modeEasy() {
     randomCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
     let index = randomCell.getAttribute("data-cell-index");
     caseIndex[index] = 2;
-    console.log(caseIndex)
     if (localStorage.getItem('Ligne') == 1) {
         win3x3()
     }else if (localStorage.getItem('Ligne') == 2) {
         win2()
     }
     player = 1;
-    
 }
 
 
 function modeImpossible() {
-    var status = document.getElementById("game-status");
     let cellsArray = Array.from(cells);
+    
 
-    if (caseIndex[0] == caseIndex[3] && caseIndex[3] == 2 && caseIndex[6] !== 1 || caseIndex[6] == caseIndex[3] && caseIndex[3] == 2 && caseIndex[0] !== 1 || caseIndex[0] == caseIndex[6] && caseIndex[6] == 2 && caseIndex[3] !== 1) {
+
+
+    if (caseIndex[0] == 1 && caseIndex[4] == 0 || caseIndex[2] == 1 && caseIndex[4] == 0 || caseIndex[6] == 1 && caseIndex[4] == 0 || caseIndex[8] == 1 && caseIndex[4] == 0 ) {
+        //debut win
+        
+        var selectedCell = cellsArray[4];
+        
+        
+        selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
+        let index = selectedCell.getAttribute("data-cell-index");
+        caseIndex[index] = 2;
+        if (localStorage.getItem('Ligne') == 1) {
+            win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
+        }
+        player = 1;
+
+    }else if(caseIndex[0] == caseIndex[3] && caseIndex[3] == 2 && caseIndex[6] !== 1 || caseIndex[6] == caseIndex[3] && caseIndex[3] == 2 && caseIndex[0] !== 1 || caseIndex[0] == caseIndex[6] && caseIndex[6] == 2 && caseIndex[3] !== 1) {
         //debut win
         if (caseIndex[0] == caseIndex[6] && caseIndex[6] == 2) {
             var selectedCell = cellsArray[3]
@@ -166,7 +182,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -186,7 +201,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -206,7 +220,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -227,7 +240,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -248,7 +260,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -269,7 +280,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -290,7 +300,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -311,7 +320,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -319,7 +327,8 @@ function modeImpossible() {
         }
 
         player = 1;
-    }else if(caseIndex[0] == caseIndex[3] && caseIndex[3] == 1 && caseIndex[6] !== 2 || caseIndex[6] == caseIndex[3] && caseIndex[3] == 1 && caseIndex[0] !== 2 || caseIndex[0] == caseIndex[6] && caseIndex[6] == 1 && caseIndex[3] !== 2) {
+    }
+    else if(caseIndex[0] == caseIndex[3] && caseIndex[3] == 1 && caseIndex[6] !== 2 || caseIndex[6] == caseIndex[3] && caseIndex[3] == 1 && caseIndex[0] !== 2 || caseIndex[0] == caseIndex[6] && caseIndex[6] == 1 && caseIndex[3] !== 2) {
         // debut defense
         if (caseIndex[0] == caseIndex[6] && caseIndex[6] == 1) {
             var selectedCell = cellsArray[3]
@@ -332,7 +341,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -353,7 +361,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -374,7 +381,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -394,7 +400,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -415,7 +420,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -436,7 +440,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -457,7 +460,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
@@ -478,7 +480,6 @@ function modeImpossible() {
         selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
         let index = selectedCell.getAttribute("data-cell-index");
         caseIndex[index] = 2;
-        console.log(caseIndex)
         if (localStorage.getItem('Ligne') == 1) {
             win3x3()
         }else if (localStorage.getItem('Ligne') == 2) {
