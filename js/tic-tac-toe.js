@@ -154,7 +154,7 @@ function modeEasy() {
 function modeImpossible() {
     let cellsArray = Array.from(cells);
 
-
+     
     if (caseIndex[0] == 1 && caseIndex[4] == 0 || caseIndex[2] == 1 && caseIndex[4] == 0 || caseIndex[6] == 1 && caseIndex[4] == 0 || caseIndex[8] == 1 && caseIndex[4] == 0 ) {
         //debut win
         
@@ -489,7 +489,20 @@ function modeImpossible() {
         }
 
         player = 1;
-    }else{
+    }else if (caseIndex[4] == 1 && caseIndex[0] !==2) {
+        var selectedCell = cellsArray[0];
+        
+        
+        selectedCell.innerHTML = '<img src="./img/croix.png" width="50" height="50">';
+        let index = selectedCell.getAttribute("data-cell-index");
+        caseIndex[index] = 2;
+        if (localStorage.getItem('Ligne') == 1) {
+            win3x3()
+        }else if (localStorage.getItem('Ligne') == 2) {
+            win2()
+        }
+        player = 1;}
+    else{
         modeEasy()
     } 
 }
